@@ -1,5 +1,7 @@
 # Getting Started with Youtube
 
+[![Build Status](https://travis-ci.com/Shield-Jaguar/apimaticTest.svg?branch=CodeGen-JAVA)](https://travis-ci.com/Shield-Jaguar/apimaticTest)
+
 ## Getting Started
 
 ### Building
