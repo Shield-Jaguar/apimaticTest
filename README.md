@@ -2,22 +2,51 @@
 
 ## Getting Started
 
-### Install the Package
+### Building
 
-The SDK is available as a NuGet that you can search for and install using the NuGet GUI. You can also use the following command on the Package Manager Console:
+The generated code uses the Newtonsoft Json.NET NuGet Package. If the automatic NuGet package restore is enabled, these dependencies will be installed automatically. Therefore, you will need internet access for build.
 
-```csharp
-Install-Package abc -Version 1.0.1
-```
+* Open the solution (Youtube.sln) file.
 
-You can also view the NuGet at:
-https://www.nuget.org/packages/abc/1.0.1
+Invoke the build process using Ctrl + Shift + B shortcut key or using the Build menu as shown below.
 
-If you are building with .NET CLI tools then you can also use the following command:
+The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with Windows Forms, Windows RT, Windows Phone 8, Silverlight 5, Xamarin iOS, Xamarin Android and Mono. More information on how to use can be found at the MSDN Portable Class Libraries documentation.
 
-```bash
-dotnet add package abc --version 1.0.1
-```
+### Installation
+
+The following section explains how to use the UNIREST library in a new project.
+
+#### 1. Starting a new project
+
+For starting a new project, right click on the current solution from the solution explorer and choose `Add -> New Project`.
+
+![Add a new project in Visual Studio](https://apidocs.io/illustration/cs?workspaceFolder=Youtube-CSharp&workspaceName=Youtube&projectName=UNIREST&rootNamespace=UNIREST&step=addProject)
+
+Next, choose `Console Application`, provide `TestConsoleProject` as the project name and click OK.
+
+![Create a new Console Application in Visual Studio](https://apidocs.io/illustration/cs?workspaceFolder=Youtube-CSharp&workspaceName=Youtube&projectName=UNIREST&rootNamespace=UNIREST&step=createProject)
+
+#### 2. Set as startup project
+
+The new console project is the entry point for the eventual execution. This requires us to set the `TestConsoleProject` as the start-up project. To do this, right-click on the `TestConsoleProject` and choose `Set as StartUp Project` form the context menu.
+
+![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=Youtube-CSharp&workspaceName=Youtube&projectName=UNIREST&rootNamespace=UNIREST&step=setStartup)
+
+#### 3. Add reference of the library project
+
+In order to use the Tester library in the new project, first we must add a project reference to the `TestConsoleProject`. First, right click on the `References` node in the solution explorer and click `Add Reference...`
+
+![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=Youtube-CSharp&workspaceName=Youtube&projectName=UNIREST&rootNamespace=UNIREST&step=addReference)
+
+Next, a window will be displayed where we must set the `checkbox` on `Tester.Tests` and click `OK`. By doing this, we have added a reference of the `Tester.Tests` project into the new `TestConsoleProject`.
+
+![Creating a project reference](https://apidocs.io/illustration/cs?workspaceFolder=Youtube-CSharp&workspaceName=Youtube&projectName=UNIREST&rootNamespace=UNIREST&step=createReference)
+
+#### 4. Write sample code
+
+Once the `TestConsoleProject` is created, a file named `Program.cs` will be visible in the solution explorer with an empty `Main` method. This is the entry point for the execution of the entire solution. Here, you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using Controller methods is given in the subsequent sections.
+
+![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=Youtube-CSharp&workspaceName=Youtube&projectName=UNIREST&rootNamespace=UNIREST&step=addCode)
 
 ### Initialize the API Client
 
@@ -30,7 +59,7 @@ The following parameters are configurable for the API Client:
 The API client can be initialized as follows:
 
 ```csharp
-Youtube.Standard.YoutubeClient client = new Youtube.Standard.YoutubeClient();
+UNIREST.YoutubeClient client = new UNIREST.YoutubeClient();
 ```
 
 Parameters for retries can be configured through the HttpClientConfiguration in the API Client:
@@ -97,152 +126,12 @@ Class to build instances of YoutubeClient.
 | `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
 | `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
 | `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
 | `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
 | `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
 | `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
 | `Environment(Environment environment)` | Current API environment. | `Builder` |
 | `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `AccessTokenCredentials(IAccessTokenCredentials accessTokenCredentials)` | Gets the access token to use with OAuth 2 authentication. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Country(string country)` | Country code in ISO 3166-1-alpha-2 standard | `Builder` |
-| `Scheme(Models.SchemeEnum scheme)` | Scheme value. | `Builder` |
-| `Host(string host)` | Host value. | `Builder` |
-| `Port(string port)` | Port value. | `Builder` |
-| `Path(string path)` | Path value. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `AccessTokenCredentials(IAccessTokenCredentials accessTokenCredentials)` | Gets the access token to use with OAuth 2 authentication. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `AccessTokenCredentials(IAccessTokenCredentials accessTokenCredentials)` | Gets the access token to use with OAuth 2 authentication. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Country(string country)` | Country code in ISO 3166-1-alpha-2 standard | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Country(string country)` | Country code in ISO 3166-1-alpha-2 standard | `Builder` |
-| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
-| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
-| `Environment(Environment environment)` | Current API environment. | `Builder` |
-| `Country(string country)` | Country code in ISO 3166-1-alpha-2 standard | `Builder` |
 | `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
 | `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
 | `Environment(Environment environment)` | Current API environment. | `Builder` |
@@ -256,7 +145,194 @@ Class to build instances of YoutubeClient.
 | `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
 | `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
 | `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Default(string mDefault)` | Default value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
 | `AccessTokenCredentials(IAccessTokenCredentials accessTokenCredentials)` | Gets the access token to use with OAuth 2 authentication. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `DefaultHost(string defaultHost)` | DefaultHost value. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Basepath(string basepath)` | Base path of the Dropbox API server | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Basepath(string basepath)` | Base path of the Dropbox API server | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `AccessTokenCredentials(IAccessTokenCredentials accessTokenCredentials)` | Gets the access token to use with OAuth 2 authentication. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `AadTenantDomain(string aadTenantDomain)` | AadTenantDomain value. | `Builder` |
+| `AccessTokenCredentials(IAccessTokenCredentials accessTokenCredentials)` | Gets the access token to use with OAuth 2 authentication. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `Auth(AuthManager auth)` | Gets the AuthManager. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
+| `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
+| `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
+| `Environment(Environment environment)` | Current API environment. | `Builder` |
 | `HttpClientConfiguration(Action<HttpClientConfiguration.Builder> action)` | Gets the configuration of the Http Client associated with this client. | `Builder` |
 | `Timeout(TimeSpan timeout)` | Http client timeout. | `Builder` |
 | `Environment(Environment environment)` | Current API environment. | `Builder` |

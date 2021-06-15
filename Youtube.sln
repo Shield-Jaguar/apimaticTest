@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Youtube.Standard", "Youtube.Standard/Youtube.Standard.csproj", "{d8c038e8-82e9-41af-8cf6-eb3c17738777}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNIREST", "UNIREST/UNIREST.csproj", "{f2bb6ff9-3db7-484d-8533-c304df32b3a7}"
 EndProject
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
         Release|Any CPU = Release|Any CPU
     EndGlobalSection
     GlobalSection(ProjectConfigurationPlatforms) = postSolution
-        {d8c038e8-82e9-41af-8cf6-eb3c17738777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {d8c038e8-82e9-41af-8cf6-eb3c17738777}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {d8c038e8-82e9-41af-8cf6-eb3c17738777}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {d8c038e8-82e9-41af-8cf6-eb3c17738777}.Release|Any CPU.Build.0 = Release|Any CPU
+        {f2bb6ff9-3db7-484d-8533-c304df32b3a7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {f2bb6ff9-3db7-484d-8533-c304df32b3a7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {f2bb6ff9-3db7-484d-8533-c304df32b3a7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {f2bb6ff9-3db7-484d-8533-c304df32b3a7}.Release|Any CPU.Build.0 = Release|Any CPU
     EndGlobalSection
     GlobalSection(SolutionProperties) = preSolution
         HideSolutionNode = FALSE
